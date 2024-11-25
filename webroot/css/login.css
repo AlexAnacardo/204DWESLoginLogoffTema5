@@ -1,9 +1,120 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 21 nov 2024, 12:54:18
-    Author     : daw2
-*/
+/*General*/
 
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+
+/*Encabezado*/
+
+header{
+    background-color: #131921; 
+    display: flex;
+    
+}
+h1{
+    text-align: center;
+    font-size: 500%;
+    background-color: #131921;    
+    color: white;  
+    padding: 2% 0px;   
+    width: 100%;
+}
+
+    header form{
+    height: 12%;
+    width: 1.7%;
+    position: absolute;
+    right: 7%;
+    top: 8%;
+    input{
+        border: none;
+        background-color: #131921;
+        color: white;
+        font-size: 110%;
+    }
+    input:hover{
+        color: #c97923;
+        text-decoration: underline;
+    }
+}
+/*body*/
+
+body{                              
+    display: flex;
+    flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;                
+    height: 100%;        
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1% auto;    
+    height: 110%;    
+    width: 80%;
+    align-items: center;        
+}
+
+main form{
+    width: 20%;
+    height: 50%;
+    margin: 0 auto;
+    
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    
+    
+    input{        
+        margin-bottom: 10%;
+    }
+    
+    #login{
+        width: 70%;
+        align-self: center;
+        background-color: #FFD814; 
+        border: none;
+        padding: 7px;
+        border-radius: 10px;
+    }
+    #login:hover{
+        background-color: #F7CA00;
+    }
+}
+a{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    color: rgb(16, 9, 114);
+    font-weight: bold;    
+}
+
+/*footer*/
+
+footer{
+    display: flex;
+    flex-direction: row;                 
+    justify-content: center;
+    background-color: #232F3E;
+    font-size: 140%;       
+}
+
+
+footer p{
+    text-align: center;                
+    width: fit-content;   
+    margin: 2% 1.5%;                          
+}
+
+footer a{
+    color: white;
+    font-weight: bold;
+}
+
+footer p:hover{
+    text-decoration: underline;  
+    color: white;
+}

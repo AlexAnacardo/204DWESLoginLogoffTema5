@@ -17,14 +17,14 @@
      </head>
      <body>
          <header>
-             <h1>Aplicacion Login logoff Tema 5</h1>
-             <form method='post'>
-                <input type="submit" name='login' id='login' value='Login'>
-             </form>
+            <h1>Aplicacion Login logoff Tema 5</h1>
+            <form method='post'>
+               <input type="submit" name='login' id='login' value='Login'>
+            </form>
          </header>  
-         <main>
+        <main>
              
-         </main>
+        </main>
         <footer>
             <p><a href="../index.html">Alex Asensio Sanchez</a></p>
             <p><a href="../204DWESProyectoDWES/indexProyectoDWES.php">DWES</a></p>
