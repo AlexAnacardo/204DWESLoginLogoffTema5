@@ -3,24 +3,44 @@
      * @version 2024/11/25
      * @author Alex Asensio Sanchez                          
      */
-
+    
+    //Se inicia la sesion 
+    session_start();
+    
+    //Si el usuario ya se ha autenticado previamente y no ha cerrado el navegador, se entrara a la aplicacion directamente
+    if(isset($_SESSION["usuarioDAW204LoginLogoffTema5"])){
+        header('location:programa.php');
+        exit;
+    }
+    
+    //Si se pulsa el boton "volver", volveremos al indice de la aplicacion
     if(isset($_REQUEST['volver'])){
        header('location:indexLoginLogoffTema5.php');
        exit;
     }
     
+    //Si no hay ningun usuario autenticado en esta sesion, se entrara aqui
     if(isset($_REQUEST['login'])){
         require_once('config/confDBPDO.php');               
             try {
+            //Se establece la conexion
             $miDB = new PDO(CONEXION, USUARIO, CONTRASEÑA);
-
-            $sql = $miDB->prepare("select T01_Password from T01_Usuario where T01_CodUsuario= ? ");
+            
+            //Solicitamos los datos del usuario
+            $sql = $miDB->prepare("select * from T01_Usuario where T01_CodUsuario= ? ");
             $sql->execute([$_REQUEST['nombre']]);
-            $usuario = $sql->fetchObject();
-            if (isset($usuario->T01_Password) && hash('sha256', $_REQUEST['nombre'] . $_REQUEST['passwd']) == $usuario->T01_Password) {
-                $sql2 = $miDB->prepare("update T01_Usuario set T01_NumConexiones=T01_NumConexiones+1, T01_FechaHoraUltimaConexion=now() where T01_CodUsuario= ? ");
+            //Guardamos el usuario en un objeto
+            $oUsuarioEnCurso = $sql->fetchObject();
+            //Si la contraseña introducida por el usuario y la correspondiente en la base de datos son la misma, se entrara en el if
+            if (isset($oUsuarioEnCurso->T01_Password) && hash('sha256', $_REQUEST['nombre'] . $_REQUEST['passwd']) == $oUsuarioEnCurso->T01_Password) {
+                //Se actualizan el numero total de conexiones del usuario
+                $sql2 = $miDB->prepare("update T01_Usuario set T01_NumConexiones=T01_NumConexiones+1, T01_FechaHoraUltimaConexion=now() where T01_CodUsuario= ? ");                
                 $sql2->execute([$_REQUEST['nombre']]);
                 
+                //Guardamos el usuario en la sesion actual
+                $_SESSION["usuarioDAW204LoginLogoffTema5"]=$oUsuarioEnCurso;
+                
+                //Se nos redirecciona al programa
                 header('location:programa.php');
             }
             else{

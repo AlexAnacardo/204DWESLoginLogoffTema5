@@ -3,13 +3,16 @@
      * @version 2024/11/25
      * @author Alex Asensio Sanchez                          
      */
-
+     
+    session_start();
+    
     if(isset($_REQUEST['detalle'])){
        header('location:detalle.php');
        exit;
     }
     
     if(isset($_REQUEST['logoff'])){
+       unset($_SESSION["usuarioDAW204LoginLogoffTema5"]);
        header('location:login.php');
        exit;
     }

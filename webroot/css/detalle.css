@@ -25,11 +25,13 @@ h1{
 }
 
 form{
-    height: 12%;
-    width: 1.7%;
+    height: 2%;
+    width: 14.7%;        
     position: absolute;
     right: 7%;
     top: 8%;
+    display: flex;
+    justify-content: space-around;
     input{
         border: none;
         background-color: #131921;
@@ -41,6 +43,25 @@ form{
         text-decoration: underline;
     }
 }
+
+table{
+    margin: 0 auto;
+    margin-bottom: 2%;
+    width: 60%;
+}
+
+table, td, tr{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td:nth-of-type(odd){
+    background-color: #E3E6E6;
+    font-weight: bold;
+}
+
+p{
+    margin: 0 auto;
+}
 /*body*/
 
 body{                              
@@ -51,15 +72,14 @@ body{
 }
 main{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    margin: 0 auto;     
-    height: 110%;  
-    width: 100%;
-    align-items: center;                    
-    background-image: url("/204DWESLoginLogoffTema5/webroot/images/portada.PNG");
-    background-repeat: no-repeat;
-    background-size: 70% 100%;
-    background-position: center;
+    margin: 0 auto;       
+    height: 110%;      
+    align-items: center;    
+    border-radius: 9%;
+    padding-top: 0.4%;
+    padding-bottom: 0.4%;
 }
 
 a{
