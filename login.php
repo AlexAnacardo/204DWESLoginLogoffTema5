@@ -26,9 +26,21 @@
             //Se establece la conexion
             $miDB = new PDO(CONEXION, USUARIO, CONTRASEÑA);
             
+            /*          REVISAR POR QUE NO FUNCIONA
+            //Concatenamos el usuario+la contraseña y lo codificamos con SHA256
+            $contraseñaCodificada=hash('sha256', $_REQUEST['nombre'] . $_REQUEST['passwd']);                        
+            
+            //Solicitamos los datos del usuario          
+            $sql = $miDB->prepare(<<<EOT
+                                    select * from T01_Usuario where T01_CodUsuario={$_REQUEST['nombre']} and T01_Password= {$contraseñaCodificada}
+                                  EOT);
+            $sql->execute();
+            */
+            
             //Solicitamos los datos del usuario
             $sql = $miDB->prepare("select * from T01_Usuario where T01_CodUsuario= ? and T01_Password= ?");
             $sql->execute([$_REQUEST['nombre'], hash('sha256', $_REQUEST['nombre'] . $_REQUEST['passwd'])]);
+            
             //Guardamos el usuario en un objeto
             $oUsuarioEnCurso = $sql->fetchObject();
             //Si la contraseña introducida por el usuario y la correspondiente en la base de datos son la misma, se entrara en el if

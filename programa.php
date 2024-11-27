@@ -18,7 +18,7 @@
     
     if(isset($_REQUEST['logoff'])){
        unset($_SESSION["usuarioDAW204LoginLogoffTema5"]);
-       header('location:login.php');
+       header('location:indexLoginLogoffTema5.php');
        exit;
     }
 ?>
