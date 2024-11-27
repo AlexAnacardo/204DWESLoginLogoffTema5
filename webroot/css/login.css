@@ -35,6 +35,7 @@ h1{
         background-color: #131921;
         color: white;
         font-size: 110%;
+        
     }
     input:hover{
         color: #c97923;
@@ -60,7 +61,7 @@ main{
 
 main form{
     width: 20%;
-    height: 50%;
+    height: 100%;
     margin: 0 auto;
     
     display: flex;
@@ -68,8 +69,15 @@ main form{
     justify-content: center;
     
     
-    input{        
+    input{    
+        margin-top: 1%;
         margin-bottom: 10%;
+        height: 6%;
+        
+    }
+    
+    input:focus{
+        box-shadow: 0px 0px 2px 2px blue;
     }
     
     #login{
@@ -79,6 +87,7 @@ main form{
         border: none;
         padding: 7px;
         border-radius: 10px;
+        box-shadow: none;
     }
     #login:hover{
         background-color: #F7CA00;

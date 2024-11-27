@@ -1,6 +1,6 @@
 <?php
     /*
-     * @version 2024/11/25
+     * @version 2024/11/26
      * @author Alex Asensio Sanchez                          
      */
     
@@ -27,12 +27,12 @@
             $miDB = new PDO(CONEXION, USUARIO, CONTRASEÑA);
             
             //Solicitamos los datos del usuario
-            $sql = $miDB->prepare("select * from T01_Usuario where T01_CodUsuario= ? ");
-            $sql->execute([$_REQUEST['nombre']]);
+            $sql = $miDB->prepare("select * from T01_Usuario where T01_CodUsuario= ? and T01_Password= ?");
+            $sql->execute([$_REQUEST['nombre'], hash('sha256', $_REQUEST['nombre'] . $_REQUEST['passwd'])]);
             //Guardamos el usuario en un objeto
             $oUsuarioEnCurso = $sql->fetchObject();
             //Si la contraseña introducida por el usuario y la correspondiente en la base de datos son la misma, se entrara en el if
-            if (isset($oUsuarioEnCurso->T01_Password) && hash('sha256', $_REQUEST['nombre'] . $_REQUEST['passwd']) == $oUsuarioEnCurso->T01_Password) {
+            if (isset($oUsuarioEnCurso->T01_CodUsuario)) {
                 //Se actualizan el numero total de conexiones del usuario
                 $sql2 = $miDB->prepare("update T01_Usuario set T01_NumConexiones=T01_NumConexiones+1, T01_FechaHoraUltimaConexion=now() where T01_CodUsuario= ? ");                
                 $sql2->execute([$_REQUEST['nombre']]);
@@ -81,9 +81,6 @@
                 <input type="password" name="passwd" id="passwd">
                 <input type="submit" id="login" name="login" value="Login">
             </form>
-            <?php
-                
-            ?>
         </main>                     
         <footer>
             <p><a href="../index.html">Alex Asensio Sanchez</a></p>

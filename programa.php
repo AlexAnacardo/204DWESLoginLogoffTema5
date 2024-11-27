@@ -1,10 +1,15 @@
 <?php
     /*
-     * @version 2024/11/25
+     * @version 2024/11/27
      * @author Alex Asensio Sanchez                          
      */
      
     session_start();
+    
+    if(!isset($_SESSION["usuarioDAW204LoginLogoffTema5"])){
+        header('location:login.php');
+        exit;
+    }
     
     if(isset($_REQUEST['detalle'])){
        header('location:detalle.php');
@@ -37,7 +42,22 @@
             </form>
          </header>  
         <main>
-             
+            <?php  
+                //Extraemos el usuario de la sesion y lo introducimos en una variable
+                $oUsuarioEnCurso=$_SESSION["usuarioDAW204LoginLogoffTema5"];
+                
+                if($oUsuarioEnCurso->T01_NumConexiones>0){                   
+                    ?>
+                    <p>Bienvenido <?php echo($oUsuarioEnCurso->T01_CodUsuario) ?>, se ha conectado un total de <?php echo $oUsuarioEnCurso->T01_NumConexiones+1 ?> veces,
+                    la ultima conexion fue el dia: <?php echo date_format(new DateTime($oUsuarioEnCurso->T01_FechaHoraUltimaConexion), "d/m/Y H:i:s") ?></p>
+                    <?php
+                }
+                else{
+                    ?>
+                        <p>Bienvenido <?php echo($oUsuarioEnCurso->T01_CodUsuario) ?>, es la primera vez que te conectas</p>
+                    <?php
+                }
+            ?>
         </main>
         <footer>
             <p><a href="../index.html">Alex Asensio Sanchez</a></p>

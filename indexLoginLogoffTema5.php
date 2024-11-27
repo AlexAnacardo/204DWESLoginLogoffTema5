@@ -1,4 +1,9 @@
 <?php
+    /*
+     * @version 2024/11/25
+     * @author Alex Asensio Sanchez                          
+     */
+
     if(isset($_REQUEST['login'])){
        header('location:login.php');
        exit;

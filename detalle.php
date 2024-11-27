@@ -6,6 +6,11 @@
      
     session_start();
 
+    if(!isset($_SESSION["usuarioDAW204LoginLogoffTema5"])){
+        header('location:login.php');
+        exit;
+    }
+    
     if(isset($_REQUEST['volver'])){
        header('location:programa.php');
        exit;
@@ -45,7 +50,7 @@
                     }
                 }                 
                 //Si la variable $_SESSION no esta definida, no se intentara mostrar su contenido
-                echo('Variable $_SERVER');
+                echo('Variable $_SESSION');
                 echo '<table>';
                 foreach($_SESSION as $clave => $valor){
                     echo("<tr><td>".$clave."</td>");
@@ -53,11 +58,7 @@
                     var_dump($_SESSION[$clave]);
                     echo("</td></tr>");
                 }
-                echo '</table>';
-                /*               
-                echo($_SESSION["usuarioDAW204LoginLogoffTema5"]->T01_CodUsuario);
-                echo($_SESSION["usuarioDAW204LoginLogoffTema5"]->T01_Password);
-                */
+                echo '</table>';                
                 mostrarSuperglobales('COOKIE', $_COOKIE);
                 mostrarSuperglobales('SERVER', $_SERVER); 
             ?>             
