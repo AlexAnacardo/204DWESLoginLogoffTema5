@@ -12,8 +12,7 @@ html{
 
 header{
     background-color: #131921; 
-    display: flex;
-    
+    display: flex;    
 }
 h1{
     text-align: center;
@@ -21,15 +20,17 @@ h1{
     background-color: #131921;    
     color: white;  
     padding: 2% 0px;   
-    width: 100%;
+    width: 60%;
+    margin-left: 23%;
 }
 
 form{
-    height: 12%;
-    width: 1.7%;
-    position: absolute;
-    right: 7%;
-    top: 8%;
+    height: 100%;
+    width: 15%;    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 1%;
     input{
         border: none;
         background-color: #131921;
@@ -41,6 +42,39 @@ form{
         text-decoration: underline;
     }
 }
+
+.dropdown{
+    color: white;    
+    height: 10%;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  
+  
+  background-color: #131921; 
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+}
+
+button{
+    border: none;
+    margin: 5px auto;
+}
+
 /*body*/
 
 body{                              

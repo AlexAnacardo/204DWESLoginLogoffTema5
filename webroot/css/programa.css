@@ -21,17 +21,23 @@ h1{
     background-color: #131921;    
     color: white;  
     padding: 2% 0px;   
-    width: 100%;
+    width: 20%;
+    margin-left: 40%;
 }
 
 form{
-    height: 2%;
-    width: 14.7%;        
+    height: 100%;
+    width: 14.7%;    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 20%;
+    /*
     position: absolute;
     right: 7%;
     top: 8%;
-    display: flex;
-    justify-content: space-around;
+    */
+    
     input{
         border: none;
         background-color: #131921;
