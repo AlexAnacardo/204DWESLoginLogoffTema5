@@ -51,6 +51,10 @@
                             case 'en':
                                 $imagenIdioma='uk.png';
                             break;
+                            
+                            default: 
+                                $imagenIdioma='españa.png';
+                            break;
                         }
                     ?>
                     <img src="webroot/images/<?php echo($imagenIdioma) ?>" style="width: 40px; height: 20px">
