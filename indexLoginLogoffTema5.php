@@ -27,14 +27,14 @@
     }
 ?>
 
-<html>
+<html id="index">
      <head>
         <meta charset="UTF-8">               
         <meta name="author" content="Alex Asensio Sanchez">
         <meta name="application-name" content="indice">
         <meta name="description" content="Indice tema 3">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link rel="stylesheet" href="webroot/css/indexLoginLogoffTema5.css">       
+        <link rel="stylesheet" href="webroot/css/loginLogoffTema5.css">       
         <title>Alex Asensio Sanchez</title>
      </head>
      <body>
