@@ -6,34 +6,35 @@
     
     $oFechaActual=new DateTime("now");
     if(!isset($_COOKIE['Idioma'])){
-        setcookie('Idioma', 'es', $oFechaActual->getTimestamp()+(86400), "/");       
+        setcookie('Idioma', 'es', $oFechaActual->getTimestamp()+(3600), "/");     
+        header('location:indexLoginLogoffTema5.php');
     }
     
     
     if(isset($_REQUEST['login'])){
-       header('location:login.php');
+       header('location:codigoPHP/login.php');
        exit;
     }
             
     if(isset($_REQUEST['español'])){        
-        setcookie('Idioma', 'es', $oFechaActual->getTimestamp()+(86400), "/");
+        setcookie('Idioma', 'es', $oFechaActual->getTimestamp()+(3600), "/");
         header('location:indexLoginLogoffTema5.php');
     }
     
     if(isset($_REQUEST['ingles'])){       
-       setcookie('Idioma', 'en', $oFechaActual->getTimestamp()+(86400), "/"); 
+       setcookie('Idioma', 'en', $oFechaActual->getTimestamp()+(3600), "/"); 
     header('location:indexLoginLogoffTema5.php');       
     }
 ?>
 
-<html>
+<html id="index">
      <head>
         <meta charset="UTF-8">               
         <meta name="author" content="Alex Asensio Sanchez">
         <meta name="application-name" content="indice">
         <meta name="description" content="Indice tema 3">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link rel="stylesheet" href="webroot/css/indexLoginLogoffTema5.css">       
+        <link rel="stylesheet" href="webroot/css/loginLogoffTema5.css">       
         <title>Alex Asensio Sanchez</title>
      </head>
      <body>
@@ -41,7 +42,7 @@
             <h1>Aplicacion Login logoff Tema 5</h1>
             <form method='post'>                                                
                 <div class='dropdown'>
-                    <?php
+                    <?php                    
                         $imagenIdioma='';
                         switch($_COOKIE['Idioma']){
                             case 'es':

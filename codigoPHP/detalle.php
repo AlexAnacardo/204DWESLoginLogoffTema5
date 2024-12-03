@@ -16,14 +16,14 @@
        exit;
     }
 ?>
-<html>
+<html id="detalle">
      <head>
         <meta charset="UTF-8">               
         <meta name="author" content="Alex Asensio Sanchez">
         <meta name="application-name" content="indice">
         <meta name="description" content="Indice tema 3">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link rel="stylesheet" href="webroot/css/detalle.css">       
+        <link rel="stylesheet" href="../webroot/css/loginLogoffTema5.css">       
         <title>Alex Asensio Sanchez</title>
      </head>
      <body>
@@ -50,7 +50,7 @@
                     }
                 }                 
                 //Si la variable $_SESSION no esta definida, no se intentara mostrar su contenido
-                echo('Variable $_SESSION');
+                echo('<p>Variable $_SESSION</p>');
                 echo '<table>';
                 foreach($_SESSION as $clave => $valor){
                     echo("<tr><td>".$clave."</td>");
@@ -64,8 +64,8 @@
             ?>             
         </main>
         <footer>
-            <p><a href="../index.html">Alex Asensio Sanchez</a></p>
-            <p><a href="../204DWESProyectoDWES/indexProyectoDWES.php">DWES</a></p>
+            <p><a href="../../index.html">Alex Asensio Sanchez</a></p>
+            <p><a href="../../204DWESProyectoDWES/indexProyectoDWES.php">DWES</a></p>
             <p><a target="blank" href="https://github.com/AlexAnacardo/204DWESLoginLogoffTema5">Repositorio del proyecto</a></p>
             <p><a target="blank" href="https://www.amazon.es">Pagina imitada</a></p>
         </footer>

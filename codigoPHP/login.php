@@ -15,32 +15,28 @@
     
     //Si se pulsa el boton "volver", volveremos al indice de la aplicacion
     if(isset($_REQUEST['volver'])){
-       header('location:indexLoginLogoffTema5.php');
+       header('location:../indexLoginLogoffTema5.php');
        exit;
     }
     
     //Si no hay ningun usuario autenticado en esta sesion, se entrara aqui
     if(isset($_REQUEST['login'])){
-        require_once('config/confDBPDO.php');               
+        require_once('../config/confDBPDO.php');               
             try {
             //Se establece la conexion
             $miDB = new PDO(CONEXION, USUARIO, CONTRASEÑA);
             
-            /*          REVISAR POR QUE NO FUNCIONA
+                   
             //Concatenamos el usuario+la contraseña y lo codificamos con SHA256
             $contraseñaCodificada=hash('sha256', $_REQUEST['nombre'] . $_REQUEST['passwd']);                        
             
             //Solicitamos los datos del usuario          
-            $sql = $miDB->prepare(<<<EOT
-                                    select * from T01_Usuario where T01_CodUsuario={$_REQUEST['nombre']} and T01_Password= {$contraseñaCodificada}
-                                  EOT);
+            $sql = $miDB->prepare(<<<FIN
+                                    select * from T01_Usuario where T01_CodUsuario='{$_REQUEST['nombre']}' and T01_Password= '{$contraseñaCodificada}'
+                                  FIN);
             $sql->execute();
-            */
             
-            //Solicitamos los datos del usuario
-            $sql = $miDB->prepare("select * from T01_Usuario where T01_CodUsuario= ? and T01_Password= ?");
-            $sql->execute([$_REQUEST['nombre'], hash('sha256', $_REQUEST['nombre'] . $_REQUEST['passwd'])]);
-            
+           
             //Guardamos el usuario en un objeto
             $oUsuarioEnCurso = $sql->fetchObject();
             //Si la contraseña introducida por el usuario y la correspondiente en la base de datos son la misma, se entrara en el if
@@ -68,14 +64,14 @@
     }
 ?>
 
-<html>
+<html id="login">
      <head>
         <meta charset="UTF-8">               
         <meta name="author" content="Alex Asensio Sanchez">
         <meta name="application-name" content="indice">
         <meta name="description" content="Indice tema 3">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link rel="stylesheet" href="webroot/css/login.css">
+        <link rel="stylesheet" href="../webroot/css/loginLogoffTema5.css">
         <title>Alex Asensio Sanchez</title>
      </head>
      <body>
@@ -95,8 +91,8 @@
             </form>
         </main>                     
         <footer>
-            <p><a href="../index.html">Alex Asensio Sanchez</a></p>
-            <p><a href="../204DWESProyectoDWES/indexProyectoDWES.php">DWES</a></p>
+            <p><a href="../../index.html">Alex Asensio Sanchez</a></p>
+            <p><a href="../../204DWESProyectoDWES/indexProyectoDWES.php">DWES</a></p>
             <p><a target="blank" href="https://github.com/AlexAnacardo/204DWESLoginLogoffTema5">Repositorio del proyecto</a></p>
             <p><a target="blank" href="https://www.amazon.es">Pagina imitada</a></p>
         </footer>
