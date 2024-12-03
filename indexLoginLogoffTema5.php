@@ -23,7 +23,7 @@
     
     if(isset($_REQUEST['ingles'])){       
        setcookie('Idioma', 'en', $oFechaActual->getTimestamp()+(3600), "/"); 
-    header('location:indexLoginLogoffTema5.php');       
+       header('location:indexLoginLogoffTema5.php');       
     }
 ?>
 
