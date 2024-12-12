@@ -28,6 +28,15 @@ h1{
     margin-left: 23%;
 }
 
+#logo{
+        position: absolute;    
+        border-radius: 10px;
+        left: 5%; 
+        top: 5%;
+        width: 8%;
+        height: 8%;
+}
+
  body{                              
     display: flex;
     flex-direction: column;
@@ -60,6 +69,10 @@ footer p:hover{
     text-decoration: underline;  
     color: white;
 }
+
+
+
+
 
 
 /*------indexLoginLogoffTema5------*/
@@ -159,6 +172,15 @@ footer p:hover{
     }
 }
 
+#login header #logo{
+        position: absolute;    
+        border-radius: 10px;
+        left: 5%; 
+        top: 5%;
+        width: 8%;
+        height: 8%;
+    }
+
 
 #login main{
     display: flex;
@@ -207,10 +229,33 @@ footer p:hover{
 
 /*------Programa------*/
 
-#programa h1{  
-    width: 20%;
-    margin-left: 40%;
+#programa header{    
+    p{
+        color: white;        
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        width: 20%;
+        margin-left: 41%;
+    }
+    img{
+        height: 35px;
+        width: 60px;
+    }
+    #logo{
+        position: absolute;    
+        border-radius: 10px;
+        left: 5%; 
+        top: 5%;
+        width: 8%;
+        height: 8%;
+    }
 }
+
+
 
 #programa form{
     height: 100%;
@@ -218,7 +263,7 @@ footer p:hover{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-left: 20%;
+    
     
     input{
         border: none;
@@ -260,19 +305,39 @@ footer p:hover{
 
 /*------Detalle------*/
 
-#detalle h1{
-    width: 100%;
-    margin-left: 0;
+#detalle header{    
+    p{
+        color: white;        
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 4%;
+        
+    }
+    h1{
+        width: 15%;
+        margin-left: 43%;
+        
+    }
+    img{
+        height: 35px;
+        width: 60px;       
+    }
+    #logo{
+        position: absolute;    
+        border-radius: 10px;
+        left: 5%; 
+        top: 5%;
+        width: 8%;
+        height: 8%;
+    }
 }
 
-#detalle form{
-    height: 2%;
-    width: 14.7%;        
-    position: absolute;
-    right: 7%;
-    top: 8%;
+#detalle form{    
     display: flex;
-    justify-content: space-around;
+    justify-cotent: space-around;
+    margin-left: 5%;
     input{
         border: none;
         background-color: #131921;

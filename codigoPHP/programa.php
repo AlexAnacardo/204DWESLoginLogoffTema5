@@ -21,6 +21,9 @@
        header('location:../indexLoginLogoffTema5.php');
        exit;
     }
+    
+    //Extraemos el usuario de la sesion y lo introducimos en una variable
+    $oUsuarioEnCurso=$_SESSION["usuarioDAW204LoginLogoffTema5"];
 ?>
 
 <html id="programa">
@@ -34,17 +37,17 @@
         <title>Alex Asensio Sanchez</title>
      </head>
      <body>
-         <header>             
+         <header>    
+            <img id="logo" src="../webroot/images/logo.png">
             <h1>Programa</h1>
+            <p><img src="../webroot/images/LogoUsuario.png"><?php echo($oUsuarioEnCurso->T01_DescUsuario); ?></p> 
             <form method='post'>
                <input type="submit" name='detalle' id='detalle' value='Detalle'>
                <input type="submit" name='logoff' id='logoff' value='Cerrar sesion'>
             </form>
          </header>  
         <main>
-            <?php  
-                //Extraemos el usuario de la sesion y lo introducimos en una variable
-                $oUsuarioEnCurso=$_SESSION["usuarioDAW204LoginLogoffTema5"];
+            <?php                  
                 switch ($_COOKIE['Idioma']){
                     case 'es':
                         if($oUsuarioEnCurso->T01_NumConexiones>0){                   

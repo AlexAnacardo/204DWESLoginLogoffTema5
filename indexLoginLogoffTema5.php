@@ -38,7 +38,8 @@
         <title>Alex Asensio Sanchez</title>
      </head>
      <body>
-         <header>                                                           
+         <header>
+            <img id="logo" src="webroot/images/logo.png">
             <h1>Aplicacion Login logoff Tema 5</h1>
             <form method='post'>                                                
                 <div class='dropdown'>
