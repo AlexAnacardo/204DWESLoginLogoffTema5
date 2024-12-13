@@ -76,6 +76,7 @@
      </head>
      <body>
         <header>
+           <img id="logo" src="../webroot/images/logo.png">
            <h1>Login</h1>           
            <form method='post'>
               <input type="submit" name='volver' id='volver' value='Volver'>

@@ -15,6 +15,9 @@
        header('location:programa.php');
        exit;
     }
+    
+    //Extraemos el usuario de la sesion y lo introducimos en una variable
+    $oUsuarioEnCurso=$_SESSION["usuarioDAW204LoginLogoffTema5"];
 ?>
 <html id="detalle">
      <head>
@@ -28,7 +31,9 @@
      </head>
      <body>
          <header>
+            <img id="logo" src="../webroot/images/logo.png">
             <h1>Detalle</h1>
+            <p><img src="../webroot/images/LogoUsuario.png"><?php echo($oUsuarioEnCurso->T01_DescUsuario); ?></p>
             <form method='post'>
                <input type="submit" name='volver' id='volver' value='Volver'>               
             </form>
